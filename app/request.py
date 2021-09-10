@@ -17,19 +17,19 @@ def get_sources(): #maybe have one where you can search by category
   '''
   Function that gets the json response to our url request
   '''
-  get_source_url = base_url.format(api_key) #maybe add category
+  get_sources_url = base_url.format(api_key) #maybe add category
 
-  with urllib.request.urlopen(get_source_url) as url:
-    get_source_data = url.read()
-    get_source_response = json.loads(get_source_data) #converts json resp to python dict
+  with urllib.request.urlopen(get_sources_url) as url:
+    get_sources_data = url.read()
+    get_sources_response = json.loads(get_sources_data) #converts json resp to python dict
 
-    source_results = None
+    sources_results = None
 
-    if get_source_response['sources']:
-      news_sources_list = get_source_response['sources']
-      source_results = process_results(news_sources_list)
+    if get_sources_response['sources']:
+      news_sources_list = get_sources_response['sources']
+      sources_results = process_results(news_sources_list)
   
-  return source_results
+  return sources_results
 
 
 def process_results(source_list):
