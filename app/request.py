@@ -36,7 +36,7 @@ def process_results(source_list):
   '''
   Function that processes the news results & turns them into a list of objs
   '''
-  source_results = [] #empty list
+  sources_results = [] #empty list
   for source_item in source_list:
     id = source_item.get('id')
     name = source_item.get('name')
@@ -44,6 +44,6 @@ def process_results(source_list):
     url = source_item.get('url')
 
     source_object = Source(id,name,description,url)
-    source_results.append(source_object)
-  return source_results
+    sources_results.append(source_object)
+  return sources_results
 
